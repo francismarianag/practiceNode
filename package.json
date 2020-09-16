@@ -1,0 +1,47 @@
+{
+  "name": "practicaNode",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www",
+    "dev": "nodemon app",
+    "debug": "DEBUG=practicaNode:* npm start",
+    "test": "jest"
+  },
+  "dependencies": {
+    "bcrypt": "^5.0.0",
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "eslint": "^7.9.0",
+    "express": "~4.16.1",
+    "google-auth-library": "^6.0.6",
+    "http-errors": "~1.6.3",
+    "jest": "^26.4.2",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.10.5",
+    "mongoose-unique-validator": "^2.0.3",
+    "morgan": "~1.9.1",
+    "pug": "2.0.0-beta11",
+    "supertest": "^4.0.2",
+    "underscore": "^1.11.0"
+  },
+  "prettier": {
+    "useTabs": true,
+    "semi": true,
+    "singleQuote": true,
+    "bracketSpacing": true
+  },
+  "eslintConfig": {
+    "extends": "plugin:prettier/recommended",
+    "rules": {
+      "semi": [
+        "error",
+        "always"
+      ],
+      "quotes": [
+        "error",
+        "double"
+      ]
+    }
+  }
+}
