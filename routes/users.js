@@ -22,12 +22,12 @@ router.get('/', verifyToken, (req, res, next) => {
         })
       }
 
-      User.count({state: true}, (err, cont) => {
+      User.count({ state: true }, (err, cont) => {
         res.json({
           ok: true,
           usersDB,
           total: cont
-         });
+        });
       })
     })
 
@@ -63,7 +63,7 @@ router.put('/:id', (req, res, next) => {
   let id = req.params.id
   let body = _.pick(req.body, ['name', 'email', 'img', 'state'])
     ;
-  User.findByIdAndUpdate(id, body, {new: true}, (err, userDB) => {
+  User.findByIdAndUpdate(id, body, { new: true }, (err, userDB) => {
     if (err) {
       return res.status(400).json({
         ok: false,
@@ -73,7 +73,7 @@ router.put('/:id', (req, res, next) => {
     res.json({
       ok: true,
       userDB
-     });
+    });
 
   })
 });
@@ -82,7 +82,7 @@ router.delete('/:id', (req, res, next) => {
 
   let id = req.params.id;
 
-  User.findByIdAndUpdate(id, { state : false}, { new: true }, (err, userDBDeleted) => {
+  User.findByIdAndUpdate(id, { state: false }, { new: true }, (err, userDBDeleted) => {
     if (err) {
       return res.status(400).json({
         ok: false,
@@ -93,7 +93,7 @@ router.delete('/:id', (req, res, next) => {
     if (!userDBDeleted) {
       return res.status(400).json({
         ok: false,
-        err : { message: 'Usuario no encontrado'}
+        err: { message: 'Usuario no encontrado' }
       })
     }
 

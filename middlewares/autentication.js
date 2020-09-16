@@ -20,4 +20,23 @@ let verifyToken = (req, res, next) => {
 
 }
 
-module.exports = { verifyToken };
+let verifyAdmin = (req, res, next) => {
+    let usuario = req.userDB;
+
+    if (usuario.role === 'ADMIN_ROLE') {
+        next();
+    } else {
+
+        return res.json({
+            ok: false,
+            err: {
+                message: 'El usuario no es administrador'
+            }
+        });
+    }
+}
+
+module.exports = {
+    verifyToken,
+    verifyAdmin
+};
