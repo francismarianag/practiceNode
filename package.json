@@ -23,7 +23,7 @@
     "morgan": "~1.9.1",
     "pug": "2.0.0-beta11",
     "supertest": "^4.0.2",
-    "underscore": "^1.11.0"
+    "underscore": "^1.13.6"
   },
   "prettier": {
     "useTabs": true,
